@@ -15,7 +15,6 @@
             font-family: 'Bruno Ace SC', cursive;
             /* font-family: 'Iceberg', cursive; */
         }
-
         blockquote {
             margin: -40px 0px 50px;
         }
@@ -36,9 +35,10 @@
             <b class="w3-xxlarge"> TIME SETTER WITH PICTURES</b>
         </header>
 
-        <h4><span id="clock">The clock goes here</span></h4>
+        <h4 style="font-family: 'Bruno Ace SC', cursive;font-size: 40px;"><span id="clock">The clock goes here</span></h4>
 
-        <img src="https://picsum.photos/400/300" alt="image" class="w3-image" id="film">
+        <img src="https://picsum.photos/400/300" alt="image" class="w3-image gif" id="film">
+        
 
         <blockquote class="w3-xlarge" id="speak">Say something</blockquote>
 
@@ -155,6 +155,9 @@
             if (hour > afternoon) {
                 hour = hour - 12;
             }
+            if (hour == 0) {
+                hour = 12
+            }
             if (minute < 10) {
                 minute = "0" + minute
             }
@@ -177,7 +180,7 @@
             var Speakjs = document.getElementById("speak");
 
             if (kanika == satisfying) {
-                var Image = "https://picsum.photos/400/300"
+                var Image = "ezgif.com-video-to-gif.gif";
                 displaymess = "This is Satisfying"
             }
             else if (kanika == wakeup) {
