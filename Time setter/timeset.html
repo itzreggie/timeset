@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Iceberg&display=swap" rel="stylesheet">
+    <title>Time Setter</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            font-family: 'Bruno Ace SC', cursive;
+            /* font-family: 'Iceberg', cursive; */
+        }
+
+        blockquote {
+            margin: -40px 0px 50px;
+        }
+
+        blockquote::before {
+            content: '"';
+        }
+
+        blockquote::after {
+            content: '"';
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w3-display-container w3-responsive w3-center w3-black w3-mobile" style="height: 570px;">
+        <header>
+            <b class="w3-xxlarge"> TIME SETTER WITH PICTURES</b>
+        </header>
+
+        <h4><span id="clock">The clock goes here</span></h4>
+
+        <img src="https://picsum.photos/400/300" alt="image" class="w3-image" id="film">
+
+        <blockquote class="w3-xlarge" id="speak">Say something</blockquote>
+
+        Wake up:
+        <select name="" id="wakeupdisturb" class="w3-border-white w3-purple w3-round-large">
+            <option value="1">1AM-2AM</option>
+            <option value="2">2AM-3AM</option>
+            <option value="3">3AM-4AM</option>
+            <option value="4">4AM-5AM</option>
+            <option value="5">5AM-6AM</option>
+            <option value="6">6AM-7AM</option>
+            <option value="7" selected>7AM-AM</option>
+            <option value="8">8AM-9AM</option>
+            <option value="9">9AM-10AM</option>
+            <option value="10">10AM-11AM</option>
+            <option value="11">11AM-12PM</option>
+            <option value="12">12PM-1PM</option>
+            <option value="13">1PM-2PM</option>
+            <option value="14">2PM-3PM</option>
+            <option value="15">3PM-4PM</option>
+            <option value="16">4PM-5PM</option>
+            <option value="17">5PM-6PM</option>
+            <option value="18">6PM-7PM</option>
+            <option value="19">7PM-8PM</option>
+            <option value="20">8PM-9PM</option>
+            <option value="21">9PM-10PM</option>
+            <option value="22">10PM-11PM</option>
+            <option value="23">11PM-12PM</option>
+            <option value="24">12PM-1AM</option>
+        </select><br>
+
+        Lunch:
+        <select name="" id="lunchtimedisturb" class="w3-border-white w3-round-large w3-purple w3-margin">
+            <option value="1">1AM-2AM</option>
+            <option value="2">2AM-3AM</option>
+            <option value="3">3AM-4AM</option>
+            <option value="4">4AM-5AM</option>
+            <option value="5">5AM-6AM</option>
+            <option value="6">6AM-7AM</option>
+            <option value="7">7AM-AM</option>
+            <option value="8">8AM-9AM</option>
+            <option value="9">9AM-10AM</option>
+            <option value="10">10AM-11AM</option>
+            <option value="11">11AM-12PM</option>
+            <option value="12">12PM-1PM</option>
+            <option value="13">1PM-2PM</option>
+            <option value="14" selected>2PM-3PM</option>
+            <option value="15">3PM-4PM</option>
+            <option value="16">4PM-5PM</option>
+            <option value="17">5PM-6PM</option>
+            <option value="18">6PM-7PM</option>
+            <option value="19">7PM-8PM</option>
+            <option value="20">8PM-9PM</option>
+            <option value="21">9PM-10PM</option>
+            <option value="22">10PM-11PM</option>
+            <option value="23">11PM-12PM</option>
+            <option value="24">12PM-1AM</option>
+        </select><br>
+
+        Go to sleep:
+        <select name="" id="sleeptimedisturb" class="w3-border-white w3-purple w3-round-large">
+            <option value="1">1AM-2AM</option>
+            <option value="2">2AM-3AM</option>
+            <option value="3">3AM-4AM</option>
+            <option value="4">4AM-5AM</option>
+            <option value="5">5AM-6AM</option>
+            <option value="6">6AM-7AM</option>
+            <option value="7">7AM-AM</option>
+            <option value="8">8AM-9AM</option>
+            <option value="9">9AM-10AM</option>
+            <option value="10">10AM-11AM</option>
+            <option value="11">11AM-12PM</option>
+            <option value="12">12PM-1PM</option>
+            <option value="13">1PM-2PM</option>
+            <option value="14">2PM-3PM</option>
+            <option value="15">3PM-4PM</option>
+            <option value="16">4PM-5PM</option>
+            <option value="17">5PM-6PM</option>
+            <option value="18" selected>6PM-7PM</option>
+            <option value="19">7PM-8PM</option>
+            <option value="20">8PM-9PM</option>
+            <option value="21">9PM-10PM</option>
+            <option value="22">10PM-11PM</option>
+            <option value="23">11PM-12PM</option>
+            <option value="24">12PM-1AM</option>
+        </select><br>
+
+        <button class=" w3-button w3-margin-top w3-margin-bottom w3-white  w3-xlarge w3-round-large w3-hover-purple"
+            id="Satispoint">SATISFYING</button>
+    </div>
+
+    <script>
+        var wakeup, sleeptime, lunch, afternoon, evening, satisfying, cocks
+
+        wakeup = 7;
+        afternoon = 12;
+        lunch = 14;
+        evening = 16;
+        sleeptime = 20;
+
+        var showtimeabove = function () {
+            var clock = document.getElementById("clock")
+
+            var currenttime = new Date();
+
+            var hour = currenttime.getHours();
+            var minute = currenttime.getMinutes();
+            var second = currenttime.getSeconds();
+            var meridian = "AM";
+
+            if (hour >= 12) {
+                meridian = "PM"
+            }
+            if (hour > afternoon) {
+                hour = hour - 12;
+            }
+            if (minute < 10) {
+                minute = "0" + minute
+            }
+            if (second < 10) {
+                second = "0" + second
+            }
+
+            cocks = hour + ":" + minute + ":" + second + "" + meridian;
+
+            clock.innerText = cocks;
+        }
+
+        var clockmove = function () {
+            
+            var kanika = new Date().getHours();
+            var displaymess;
+            var pics = "https://picsum.photos/400/300"
+
+            var Filmjs = document.getElementById("film");
+            var Speakjs = document.getElementById("speak");
+
+            if (kanika == satisfying) {
+                var Image = "https://picsum.photos/400/300"
+                displaymess = "This is Satisfying"
+            }
+            else if (kanika == wakeup) {
+                Image = "https://picsum.photos/400/300"
+                displaymess = "Awake!!!!"
+            }
+            else if (kanika < afternoon) {
+                Image = "https://picsum.photos/400/300"
+                displaymess = "Good morning"
+            }
+            else if (kanika == lunch) {
+                Image = "https://picsum.photos/400/300"
+                displaymess = "Lunchtime"
+            }
+            else if (kanika >= evening) {
+                Image = "https://picsum.photos/400/300"
+                displaymess = "Good evening"
+            }
+            else if (kanika >= sleeptime) {
+                Image = "https://picsum.photos/400/300"
+                displaymess = "Go to sleep"
+            }
+            else {
+                Image = "https://picsum.photos/400/300"
+                displaymess = "good afternoon"
+            }
+
+            Speakjs.innerText = displaymess;
+            Filmjs.src = Image;
+
+            showtimeabove();
+
+        }
+
+        clockmove();
+
+        var asecond = 1000;
+        setInterval(clockmove, asecond);
+
+        var satisfyingbutt = document.getElementById("Satispoint")
+
+        var SatisfyingEvent = function () {
+            if (satisfying < 0) {
+                satisfying = new Date().getHours();
+                Satispoint.innerText = "Are You satisfied?"
+            }
+            else {
+                satisfying = -1;
+                Satispoint.innerText = "Satisfy Yourself"
+            }
+        }
+
+        satisfyingbutt.addEventListener("click", SatisfyingEvent)
+        SatisfyingEvent();
+
+        //wake up activity
+        var wakeupdisturb = document.getElementById("wakeupdisturb")
+
+        var wakeUpEvent = function () {
+            
+            wakeup = wakeupdisturb.textContent;
+        }
+
+        wakeupdisturb.addEventListener("change", wakeUpEvent)
+
+        //lunch time activity
+
+        var lunchtimedisturb = document.getElementById("lunchtimedisturb");
+
+        var lunchEvent = function () {
+
+            lunch = lunchtimedisturb.textContent;
+        }
+
+        lunchtimedisturb.addEventListener("change", lunchEvent);
+
+        //sleep time activity
+
+        var sleeptimedisturb = document.getElementById("sleeptimedisturb");
+
+        var SleepEvent = function() {
+
+            sleeptime = sleeptimedisturb.textContent;
+        }
+
+        sleeptimedisturb.addEventListener("change", SleepEvent)
+    </script>
+</body>
+
+</html>
