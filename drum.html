@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="icon" href="craiyon_094213_a_logo_of_a_coder_playing_drums.png">
+    <title>Drums</title>
+    <style>
+        span{
+            text-transform: uppercase;
+        }
+        .playing{
+            transform: scale(1.1);
+            border: palevioletred;
+            box-shadow: 0 0 10px black;
+        }
+    </style>
+</head>
+
+<body class="">
+    <h1 style="text-transform: uppercase;" class="w3-center">tap the keyboard to play the drums!</h1>
+    <div class="w3-row-padding w3-center" style="padding-left: 16%;">
+        <div data-key="65" class="w3-black w3-col l1 m5 s12  w3-margin-top butsize w3-round-xlarge" style="margin-left: 5px; transition: all .17s ease-out;"
+        id="">
+            <kbd style="font-size: 2rem;">A</kbd><br>   
+            <span class="w3-margin">clap</span>
+        </div>
+        <div data-key="83" class="w3-red w3-col l1 m5 s12 w3-margin-top butsize w3-round-xlarge" style="margin-left: 5px; transition: all .17s ease-out;">
+            <kbd style="font-size: 2rem;">S</kbd><br>   
+            <span class="w3-margin">hihat</span>
+        </div>
+        <div data-key="68" class="w3-orange w3-col l1 m5 s12 w3-margin-top butsize w3-round-xlarge" style="margin-left: 5px; transition: all .17s ease-out;">
+            <kbd style="font-size: 2rem;">D</kbd><br>   
+            <span class="w3-margin">kick</span>
+        </div>
+        <div data-key="70" class="w3-yellow w3-col l2 m5 s12 w3-margin-top butsize w3-round-xlarge" style="margin-left: 5px; transition: all .17s ease-out;">
+            <kbd style="font-size: 2rem;">F</kbd><br>   
+            <span class="w3-margin">openhat</span>
+        </div>
+        <div data-key="71" class="w3-green w3-col l1 m5 s12 w3-margin-top butsize w3-round-xlarge" style="margin-left: 5px; transition: all .17s ease-out;">
+            <kbd style="font-size: 2rem;">G</kbd><br>   
+            <span class="w3-margin">boom</span>
+        </div>
+        <div data-key="72" class="w3-blue w3-col l1 m5 s12 w3-margin-top butsize w3-round-xlarge" style="margin-left: 5px; transition: all .17s ease-out;">
+            <kbd style="font-size: 2rem;">H</kbd><br>   
+            <span class="w3-margin">ride</span>
+        </div>
+        <div data-key="74" class="w3-indigo w3-col l1 m5 s12 w3-margin-top butsize w3-round-xlarge" style="margin-left: 5px; transition: all .17s ease-out;">
+            <kbd style="font-size: 2rem;">J</kbd><br>   
+            <span class="w3-margin">snare</span>
+        </div>
+        <div data-key="75" class="w3-purple w3-col l1 m5 s12 w3-margin-top butsize w3-round-xlarge" style="margin-left: 5px; transition: all .17s ease-out;">
+            <kbd style="font-size: 2rem;">K</kbd><br>   
+            <span class="w3-margin">tom</span>
+        </div>
+        <div data-key="76" class="w3-teal w3-col l1 m5 s12 w3-margin-top butsize w3-round-xlarge" style="margin-left: 5px; transition: all .07s ease-out;">
+            <kbd style="font-size: 2rem;">L</kbd><br>   
+            <span class="w3-margin">tink</span>
+        </div>
+    </div>
+
+    <audio data-key="65"  src="drum sounds/01 - JavaScript Drum Kit_sounds_clap.wav"></audio>
+    <audio data-key="83" src="drum sounds/01 - JavaScript Drum Kit_sounds_hihat.wav"></audio>
+    <audio data-key="68" src="drum sounds/01 - JavaScript Drum Kit_sounds_kick.wav"></audio>
+    <audio data-key="70" src="drum sounds/01 - JavaScript Drum Kit_sounds_openhat.wav"></audio>
+    <audio data-key="71" src="drum sounds/01 - JavaScript Drum Kit_sounds_boom.wav"></audio>
+    <audio data-key="72" src="drum sounds/01 - JavaScript Drum Kit_sounds_ride.wav"></audio>
+    <audio data-key="74" src="drum sounds/01 - JavaScript Drum Kit_sounds_snare.wav"></audio>
+    <audio data-key="75" src="drum sounds/01 - JavaScript Drum Kit_sounds_tom.wav"></audio>
+    <audio data-key="76" src="drum sounds/01 - JavaScript Drum Kit_sounds_tink.wav"></audio>
+
+    <script>
+        function removetrans(e){
+            if (e.propertyName !== "transform") return;
+            e.target.classList.remove("playing");
+        }
+
+        function playsound(e) {
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+            const thekey = document.querySelector(`div[data-key="${e.keyCode}"]`);
+            if (!audio) return;
+
+            thekey.classList.add("playing");
+            audio.currentTime = 0;
+            audio.play();
+        }
+
+        const thiskeys = Array.from(document.querySelectorAll(".butsize"));
+        thiskeys.forEach(key => key.addEventListener("transitionend", removetrans));
+        window.addEventListener("keyup", playsound);
+    </script>
+</body>
+
+</html>
